@@ -38,8 +38,8 @@
                     id="user-menu"
                     aria-label="User menu"
                     aria-haspopup="true"
-                    (click)="toggleOpen()"
-                    [attr.aria-expanded]="opened"
+                    (click)="toggleHorizontalUserPopout()"
+                    [attr.aria-expanded]="openedHorizontalUserPopout"
                   >
                     <ng-container *ngIf="userImage; else GuestImage">
                       <img
@@ -55,7 +55,7 @@
                   </button>
                 </div>
                 <!-- TODO: x-transition from Alpine still needs to be ported to the user-options below. -->
-                <div class="user-options" *ngIf="opened">
+                <div class="user-options" *ngIf="openedHorizontalUserPopout">
                   <div class="options-container">
                     <a
                       routerLink="/profile"
@@ -79,20 +79,20 @@
           </div>
           <div class="hamburger">
             <button
-              (click)="toggleOpen()"
-              [attr.aria-label]="opened ? 'Close main menu' : 'Main menu'"
-              [attr.aria-expanded]="opened"
+              (click)="toggleVerticalMenu()"
+              [attr.aria-label]="openedVerticalMenu ? 'Close main menu' : 'Main menu'"
+              [attr.aria-expanded]="openedVerticalMenu"
             >
               <svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path
-                  [class.hide]="opened"
+                  [class.hide]="openedVerticalMenu"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 />
                 <path
-                  [class.hide]="!opened"
+                  [class.hide]="!openedVerticalMenu"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -104,7 +104,7 @@
         </div>
       </div>
     </div>
-    <div class="nav-vertical" [class.hide]="!opened">
+    <div class="nav-vertical" [class.hide]="!openedVerticalMenu">
       <div class="options">
         <a
           routerLink="/home"

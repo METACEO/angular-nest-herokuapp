@@ -6,7 +6,8 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public opened = false;
+  public openedVerticalMenu = false;
+  public openedHorizontalUserPopout = false;
   public userImage = true;
 
   @ViewChild('horizontalUserPopout')
@@ -14,31 +15,37 @@ export class AppComponent {
 
   @HostListener('keyup.escape')
   public onEscapeKeyUp() {
-    this.opened = false;
+    this.openedVerticalMenu = false;
+    this.openedHorizontalUserPopout = false;
   }
 
   @HostListener('click', ['$event'])
   public handleAutomaticUserPopoutClose($event) {
-    const { horizontalUserPopout, opened } = this;
+    const { horizontalUserPopout, openedHorizontalUserPopout } = this;
     const $target = $event?.target;
     const $horizontalUserPopout = horizontalUserPopout?.nativeElement;
     // If there's no good input or we're
     // not even open, short-circuit.
-    if (!$target || !$horizontalUserPopout || !opened) {
+    if (!$target || !$horizontalUserPopout || !openedHorizontalUserPopout) {
       return;
     }
     // Otherwise close the popout if the
     // click is outside our container.
     if (!$horizontalUserPopout.contains($target)) {
-      this.opened = false;
+      this.openedHorizontalUserPopout = false;
     }
   }
 
-  public toggleOpen(): void {
-    this.opened = !this.opened;
+  public toggleHorizontalUserPopout(): void {
+    this.openedHorizontalUserPopout = !this.openedHorizontalUserPopout;
+  }
+
+  public toggleVerticalMenu(): void {
+    this.openedVerticalMenu = !this.openedVerticalMenu;
   }
 
   public handleNavMenuClick(): void {
-    this.opened = false;
+    this.openedHorizontalUserPopout = false;
+    this.openedVerticalMenu = false;
   }
 }
