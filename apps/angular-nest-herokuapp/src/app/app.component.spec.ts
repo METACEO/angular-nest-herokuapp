@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FooterModule } from '@angular-nest-herokuapp/angular-nest-herokuapp-client';
 
 import { AppComponent } from './app.component';
 
@@ -8,7 +9,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
       imports: [
-        RouterTestingModule.withRoutes([])
+        RouterTestingModule.withRoutes([]),
+        FooterModule
       ]
     }).compileComponents();
   }));
