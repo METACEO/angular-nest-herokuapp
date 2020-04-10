@@ -1,3 +1,36 @@
+// Top-level class that is used between both the horizontal
+// and vertical navigation menus.
+.route-links {
+  > a {
+    @apply mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300;
+
+    &:first-child {
+      @apply mt-0;
+    }
+    &:hover {
+      @apply text-white bg-gray-700;
+    }
+    &:focus {
+      @apply outline-none text-white bg-gray-700;
+    }
+    &.active,
+    &.active:focus {
+      @apply outline-none text-white bg-gray-900;
+    }
+  }
+}
+
+// Top-level class that is used between both the horizontal
+// and vertical navigation menus. This is the gray circle
+// with the question mark in the center.
+span.guest-image {
+  @apply inline-flex items-center justify-center bg-gray-400;
+
+  span.guest-text {
+    @apply text-xl font-medium leading-none text-white;
+  }
+}
+
 :host {
   @apply block bg-gray-100 min-h-screen;
 }
@@ -33,21 +66,8 @@ div.header {
                 @apply ml-10 flex items-baseline;
 
                 > a {
-                  @apply ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300;
+                  @apply text-sm ml-4 mt-0;
 
-                  &:hover {
-                    @apply text-white bg-gray-700;
-                  }
-                  &:focus {
-                    @apply outline-none text-white bg-gray-700;
-                  }
-                  &.active {
-                    @apply text-white bg-gray-900;
-
-                    &:focus {
-                      @apply text-white bg-gray-700;
-                    }
-                  }
                   &:first-child {
                     @apply ml-0;
                   }
@@ -147,27 +167,6 @@ div.header {
 
       div.options {
         @apply px-2 py-3;
-
-        > a {
-          @apply mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300;
-
-          &:hover {
-            @apply text-white bg-gray-700;
-          }
-          &:focus {
-            @apply outline-none text-white bg-gray-700;
-          }
-          &.active {
-            @apply text-white bg-gray-900;
-
-            &:focus {
-              @apply outline-none text-white bg-gray-700;
-            }
-          }
-          &:first-child {
-            @apply mt-0;
-          }
-        }
       }
       div.user {
         @apply pt-4 pb-3 border-t border-gray-700;
@@ -180,13 +179,6 @@ div.header {
 
             > * {
               @apply h-10 w-10 rounded-full;
-            }
-            span.guest-image {
-              @apply inline-flex items-center justify-center bg-gray-400;
-
-              span.guest-text {
-                @apply text-xl font-medium leading-none text-white;
-              }
             }
           }
           div.info {
@@ -202,27 +194,6 @@ div.header {
         }
         div.user-options {
           @apply mt-3 px-2;
-
-          > a {
-            @apply mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300;
-
-            &:hover {
-              @apply text-white bg-gray-700;
-            }
-            &:focus {
-              @apply outline-none text-white bg-gray-700;
-            }
-            &.active {
-              @apply text-white bg-gray-900;
-
-              &:focus {
-                @apply outline-none text-white bg-gray-700;
-              }
-            }
-            &:first-child {
-              @apply mt-0;
-            }
-          }
         }
       }
       &.hide {
