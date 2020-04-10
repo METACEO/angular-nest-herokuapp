@@ -80,7 +80,9 @@
           <div class="hamburger">
             <button
               (click)="toggleVerticalMenu()"
-              [attr.aria-label]="openedVerticalMenu ? 'Close main menu' : 'Main menu'"
+              [attr.aria-label]="
+                openedVerticalMenu ? 'Close main menu' : 'Main menu'
+              "
               [attr.aria-expanded]="openedVerticalMenu"
             >
               <svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
