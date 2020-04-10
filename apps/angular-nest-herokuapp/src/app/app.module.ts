@@ -15,6 +15,11 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot([
       {
         path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
       },
       {
