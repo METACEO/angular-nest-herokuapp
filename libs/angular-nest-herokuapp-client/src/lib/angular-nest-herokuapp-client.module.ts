@@ -4,13 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FooterModule } from './footer';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FooterModule
-  ],
-  exports: [
-    FooterModule
-  ]
+  imports: [CommonModule, FooterModule],
+  exports: [FooterModule]
 })
-export class AngularNestHerokuappClientModule {
-}
+export class AngularNestHerokuappClientModule {}
