@@ -59,8 +59,14 @@
                       </ng-template>
                     </button>
                   </div>
-                  <!-- TODO: x-transition from Alpine still needs to be ported to the user-options below. -->
-                  <div class="user-options" *ngIf="openedHorizontalUserPopout">
+                  <div class="user-options"
+                       *ngTransition="openedHorizontalUserPopout"
+                       ngTransitionEnter="enter"
+                       ngTransitionEnterStart="hidden"
+                       ngTransitionEnterEnd="showing"
+                       ngTransitionLeave="leave"
+                       ngTransitionLeaveStart="showing"
+                       ngTransitionLeaveEnd="hidden">
                     <div class="options-container">
                       <a
                         routerLink="/profile"
