@@ -59,14 +59,16 @@
                       </ng-template>
                     </button>
                   </div>
-                  <div class="user-options"
-                       *ngTransition="openedHorizontalUserPopout"
-                       ngTransitionEnter="enter"
-                       ngTransitionEnterStart="hidden"
-                       ngTransitionEnterEnd="showing"
-                       ngTransitionLeave="leave"
-                       ngTransitionLeaveStart="showing"
-                       ngTransitionLeaveEnd="hidden">
+                  <div
+                    class="user-options"
+                    *ngTransition="openedHorizontalUserPopout"
+                    ngTransitionEnter="enter"
+                    ngTransitionEnterStart="hidden"
+                    ngTransitionEnterEnd="showing"
+                    ngTransitionLeave="leave"
+                    ngTransitionLeaveStart="showing"
+                    ngTransitionLeaveEnd="hidden"
+                  >
                     <div class="options-container">
                       <a
                         routerLink="/profile"

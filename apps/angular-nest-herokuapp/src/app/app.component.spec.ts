@@ -9,7 +9,11 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
-      imports: [RouterTestingModule.withRoutes([]), NgTransitionModule, FooterModule]
+      imports: [
+        RouterTestingModule.withRoutes([]),
+        NgTransitionModule,
+        FooterModule
+      ]
     }).compileComponents();
   }));
 
