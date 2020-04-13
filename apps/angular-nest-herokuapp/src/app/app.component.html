@@ -1,7 +1,7 @@
 <div class="fullscreen-container">
   <div class="header">
     <nav>
-      <div class="nav-horizontal">
+      <div id="nav-horizontal">
         <div class="horizontal-wrapper">
           <div class="horizontal-container">
             <div class="horizontal-nav">
@@ -88,7 +88,7 @@
                 </div>
               </div>
             </div>
-            <div class="hamburger">
+            <div id="hamburger">
               <button
                 (click)="toggleVerticalMenu()"
                 [attr.aria-label]="
@@ -117,7 +117,7 @@
           </div>
         </div>
       </div>
-      <div class="nav-vertical" [class.hide]="!openedVerticalMenu">
+      <div id="nav-vertical" [class.hide]="!openedVerticalMenu">
         <div class="options route-links">
           <a
             routerLink="/home"
